@@ -16,7 +16,8 @@ spec:
         spec:
             containers:
             - name: desafio-nginx
-              image: nginx:1.17-alpine
+              image: paulodutra/nginx-code-edu
+              #command: ['/bin/sh', '-c', "cd /usr/share/nginx/html; rm index.html; touch index.html; echo '<h1>Code.education Rocks.</h1>' >> index.html; nginx start"]
               ports:
               - containerPort: 80
               volumeMounts: #monta o volume
