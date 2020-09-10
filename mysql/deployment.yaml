@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: desafio-mysql
+spec:
+    replicas: 1
+    selector:
+        matchLabels:
+            app: desafio-mysql  #selector especifico para ser reconhecido na criação do serviço
+            tier: db
+    template: #referente ao POD
+        metadata:
+            labels:
+                app: desafio-mysql
+                tier: db
+        spec: #spec o POD
+            containers:
+            - image: mysql:5.7
+              name: desafio-mysql
+              args:
+                - "--ignore-db-dir=lost+found"
+              env:
+              - name: MYSQL_ROOT_PASSWORD
+                valueFrom:
+                    secretKeyRef:
+                        name: desafio-mysql-pass
+                        key: password
+              ports:
+              - containerPort: 3306
+              volumeMounts:
+              - name: desafio-mysql-persistent-storage
+                mountPath: /var/lib/mysql #local onde o mysql guarda os arquivos
+            volumes:
+            - name: desafio-mysql-persistent-storage
+              persistentVolumeClaim:
+                claimName: desafio-mysql-pv-claim # mesmo nome devido no arquivo do persistent-volume.yaml 
