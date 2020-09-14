@@ -6,21 +6,23 @@ import (
 )
 
 
-Type DataPage struct {
-	PageTitle string
+type DataPage struct {
+	Content string
 }
 
 func greeting() string {
-	return ""
+	return "Code.education Rocks!"
 }
 
 func main() {
-	renderHtml := template.Must(template.ParseFiles("main/index.html"))
+	
+	renderHtml := template.Must(template.ParseFiles("index.html"))
+	content := greeting()
+			
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
 		data := DataPage{
-			PageTitle: greeting()
-		}
-
+            Content: content,
+        }
 		renderHtml.Execute(w, data)
 	})
 
