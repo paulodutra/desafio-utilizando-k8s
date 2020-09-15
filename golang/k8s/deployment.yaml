@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+    name: golang-deployment
+    labels:
+        app: golang
+spec: 
+    replicas: 1
+    selector:
+        matchLabels:
+            app: golang
+        template: #template do pod
+            metadata:
+                labels:
+                    app: golang
+            spec: #especificacao do pod
+                containers:
+                - name: golang
+                  image: paulodutra/utilizando-k8s-golang:latest
+                  ports:
+                  - containerPort: 80
