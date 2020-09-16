@@ -9,8 +9,8 @@ steps:
   args: ['ps']
 
 - id: 'Executando teste unitário'
-  name: 'gcr.io/cloud-builders/go'
-  #entrypoint: gcloud
+  name: 'golang'
+  entrypoint: go
   args: ['test']
   env: ['GOPATH=/go/src']
 
