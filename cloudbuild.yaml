@@ -13,6 +13,9 @@ steps:
   entrypoint: go
   env: ['GOPATH=/go/src']
   args: ['test']
+  volumes:
+  - name: 'go'
+    path: '/go/src'
 
 
 
