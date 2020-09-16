@@ -1,6 +1,6 @@
 steps:
 - id: 'Executando docker-compose'
-  name: 'docker/compose:1.22.0'
+  name: 'gcr.io/$PROJECT_ID/docker-compose:1.25.5'
   args: ['-f', 'docker-compose.yaml', 'up', -d]
 
 - id: 'Verificando se o container esta rodando'
