@@ -1,6 +1,6 @@
 steps:
 - id: 'Executando docker-compose'
-  name: 'docker/compose'
+  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk/docker/compose'
   args: ['-f', 'docker-compose.yaml', 'up', -d]
 
 - id: 'Verificando se o container esta rodando'
