@@ -9,13 +9,10 @@ steps:
   args: ['ps']
 
 - id: 'Executando teste unitário'
-  name: 'golang'
-  entrypoint: go
-  env: ['GOPATH=/go/src']
+  name: 'gcr.io/cloud-builders/go'
   args: ['test']
-  volumes:
-  - name: 'golang'
-    path: '/go/src'
+  env: ['GOPATH=/go/src']
+ 
 
 
 
