@@ -4,7 +4,7 @@ steps:
   args: ['-f', 'golang/docker-compose.yaml', 'up', -d]
 
 - id: 'Verificando se o container esta rodando'
-  name: 'gcr.io/cloud-builders/docker'
+  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
   args: ['ps']
 
