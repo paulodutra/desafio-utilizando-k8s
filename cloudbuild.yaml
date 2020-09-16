@@ -10,7 +10,7 @@ steps:
 
 - id: 'Executando teste unitário'
   name: 'gcr.io/cloud-builders/go'
-  args: ['test /golang']
+  args: ['test ./golang']
   env: ['GOPATH=/go/src']
  
 
