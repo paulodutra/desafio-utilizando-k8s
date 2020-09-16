@@ -14,7 +14,7 @@ steps:
   env: ['GOPATH=/go/src']
   args: ['test']
   volumes:
-  - name: 'go'
+  - name: 'golang'
     path: '/go/src'
 
 
