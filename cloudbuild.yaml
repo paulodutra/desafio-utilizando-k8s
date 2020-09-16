@@ -11,7 +11,8 @@ steps:
 - id: 'Executando teste unitário'
   name: 'golang'
   entrypoint: go
-  args: ['test']
   env: ['GOPATH=/go/src']
+  args: ['go','test']
+
 
 
