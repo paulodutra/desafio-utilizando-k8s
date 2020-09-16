@@ -19,4 +19,5 @@ Ative o processo de CI no Google Cloud Build para garantir que a cada PR criada 
 Gere a imagem desse aplicativo de forma otimizada e publique-a no Docker Hub
 Utilizando o Kubernetes, disponibilize o serviço do tipo Load Balancer que quando acessado pelo browser acesse a aplicação criada em Go.
 
+
 <a href="https://hub.docker.com/repository/docker/paulodutra/utilizando-k8s-golang" target="__blank">Endereço imagem Docker Hub</a>
