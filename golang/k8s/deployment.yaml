@@ -9,13 +9,14 @@ spec:
     selector:
         matchLabels:
             app: golang
-        template: #template do pod
-            metadata:
-                labels:
-                    app: golang
-            spec: #especificacao do pod
-                containers:
-                - name: golang
-                  image: paulodutra/utilizando-k8s-golang:latest
-                  ports:
-                  - containerPort: 80
+    template: #template do pod
+        metadata:
+            labels:
+                app: golang
+        spec: #especificacao do pod
+            containers:
+            - image: paulodutra/utilizando-k8s-golang:latest
+              name: golang
+              
+              ports:
+              - containerPort: 80
