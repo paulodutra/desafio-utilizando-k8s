@@ -12,7 +12,7 @@ steps:
   name: 'golang'
   entrypoint: go
   env: ['GOPATH=/go/src']
-  args: ['go','test']
+  args: ['test']
 
 
 
