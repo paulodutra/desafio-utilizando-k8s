@@ -4,13 +4,13 @@ steps:
   args: ['-f', 'golang/docker-compose.yaml', 'up', -d]
 
 - id: 'Verificando se o container esta rodando'
-  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
+  name: 'gcr.io/cloud-builders/docker'
+  #entrypoint: gcloud
   args: ['ps']
 
 - id: 'Executando teste unitário'
-  name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
-  entrypoint: gcloud
+  name: 'gcr.io/cloud-builders/go'
+  #entrypoint: gcloud
   args: ['test']
   env: ['GOPATH=/go/src']
 
